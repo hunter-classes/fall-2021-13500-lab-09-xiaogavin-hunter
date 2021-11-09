@@ -31,11 +31,11 @@ TEST_CASE("Task B:") {
 
 // results are in ## ## ##, * 2 for all 
 TEST_CASE("Task C:") { 
-    CHECK(move(&test_one, &test_two, 2.0) == "20 32 44"); // 10+5*2 | 20+6*2 | 30+7*2
-    CHECK(move(&test_two, &test_five, 2.0) == "143 216 -93"); // 5+69*2 | 6+105*2 | 7+-50*2
-    CHECK(move(&test_four, &test_three, 2.0) == "100 90 200"); // 100+0*2 | 100+-5*2 | 100+50*2
-    CHECK(move(&test_five, &test_one, 2.0) == "89 145 10"); // 69+10*2 | 105+20*2 | -50+30*2
-    CHECK(move(&test_one, &test_three, 2.0) == "10 10 130"); // 10+0*2 | 20+-5*2 | 30+50*2
+    CHECK(move(&test_one, &test_two, 2) == "20 32 44"); // 10+5*2 | 20+6*2 | 30+7*2
+    CHECK(move(&test_two, &test_five, 2) == "143 216 -93"); // 5+69*2 | 6+105*2 | 7+-50*2
+    CHECK(move(&test_four, &test_three, 2) == "100 90 200"); // 100+0*2 | 100+-5*2 | 100+50*2
+    CHECK(move(&test_five, &test_one, 2) == "89 145 10"); // 69+10*2 | 105+20*2 | -50+30*2
+    CHECK(move(&test_one, &test_three, 2) == "10 10 130"); // 10+0*2 | 20+-5*2 | 30+50*2
 }
 
 TEST_CASE("Task E:") {

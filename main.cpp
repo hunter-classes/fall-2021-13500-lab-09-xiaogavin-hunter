@@ -10,9 +10,9 @@ int main() {
     double z = 30;
 
     Coord3D *ppos = createCoord3D(x, y, z);
-    Coord3D *pvel = createCoord3D(x - 5, y + 21, z - 45);
+    Coord3D *pvel = createCoord3D(5, 6, 7);
 
-    std::cout << "Coordinates after 10 seconds: " << move(ppos, pvel, 10.0) << std::endl;
+    std::cout << "Coordinates after 10 seconds: " << move(ppos, pvel, 2) << std::endl;
 
     std::cout << std::setw(21) << "Address of ppos: " << ppos << std::endl;
 

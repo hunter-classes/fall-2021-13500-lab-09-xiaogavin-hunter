@@ -20,11 +20,6 @@ std::string move(Coord3D *ppos, Coord3D *pvel, double dt) {
     */
    Coord3D point = {0, 0, 0}; 
 
-    // sets ppos 
-    ppos->x = ppos->x + pvel->x * dt; 
-    ppos->y = ppos->y + pvel->y * dt;
-    ppos->z = ppos->z + pvel->z * dt;
-
     // used for return values 
     point.x = ppos->x + pvel->x * dt; 
     point.y = ppos->y + pvel->y * dt;
