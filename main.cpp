@@ -16,8 +16,8 @@ int main() {
 
     std::cout << std::setw(21) << "Address of ppos: " << ppos << std::endl;
 
-    deleteCoord3D(ppos); // release memory
     deleteCoord3D(pvel);
+    deleteCoord3D(ppos); // release memory
 
     Coord3D *ppos_new = createCoord3D(x,y,z);
     std::cout << "Address of ppos_new: " << ppos_new << std::endl;
