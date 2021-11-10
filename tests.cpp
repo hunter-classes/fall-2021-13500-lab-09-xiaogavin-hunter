@@ -1,6 +1,4 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
-#include <string>
-#include <sstream>
 #include "doctest.h"
 #include "funcs.h"
 
@@ -38,89 +36,14 @@ TEST_CASE("Task C:") {
     CHECK(move(&test_one, &test_three, 2) == "10 10 130"); // 10+0*2 | 20+-5*2 | 30+50*2
 }
 
+// Uses another function to test, function basically makes a pointer, stores address in a string, 
+// deletes pointer and repeats for another pointer 
+// Then compares address and returns true/false. Should always be true.
 TEST_CASE("Task E:") {
-    SUBCASE("Test #1:") {
-    Coord3D * point = createCoord3D(10, 20, 30); 
-    // Stores point in address_a and deletes point from memory 
-    std::ostringstream oss;
-    oss << point;
-    std::string address_a = oss.str();
-    deleteCoord3D(point);
+    CHECK(is_same_address(test_one.x, test_one.y, test_one.z) == true);
+    CHECK(is_same_address(test_two.x, test_two.y, test_two.z) == true);
+    CHECK(is_same_address(test_three.x, test_three.y, test_three.z) == true);
+    CHECK(is_same_address(test_four.x, test_four.y, test_four.z) == true);
+    CHECK(is_same_address(test_five.x, test_five.y, test_five.z) == true);
 
-    Coord3D *new_point = createCoord3D(10, 20, 30);
-    std::ostringstream oss_new;
-    oss_new << new_point;
-    std::string address_a_new = oss.str();
-    deleteCoord3D(point);
-
-    CHECK(address_a_new == address_a);
-    }
-
-    SUBCASE("Test #2:") {
-    Coord3D * point = createCoord3D(5, 6, 7); 
-    // Stores point in address_a and deletes point from memory 
-    std::ostringstream oss;
-    oss << point;
-    std::string address_a = oss.str();
-    deleteCoord3D(point);
-
-    Coord3D *new_point = createCoord3D(5, 6, 7);
-    std::ostringstream oss_new;
-    oss_new << new_point;
-    std::string address_a_new = oss.str();
-    deleteCoord3D(point);
-
-    CHECK(address_a_new == address_a);
-    }
-
-    SUBCASE("Test #3:") {
-    Coord3D * point = createCoord3D(0, -5, 50); 
-    // Stores point in address_a and deletes point from memory 
-    std::ostringstream oss;
-    oss << point;
-    std::string address_a = oss.str();
-    deleteCoord3D(point);
-
-    Coord3D *new_point = createCoord3D(0, -5, 50);
-    std::ostringstream oss_new;
-    oss_new << new_point;
-    std::string address_a_new = oss.str();
-    deleteCoord3D(point);
-
-    CHECK(address_a_new == address_a);
-    }
-
-    SUBCASE("Test #4:") {
-    Coord3D * point = createCoord3D(100, 100, 100); 
-    // Stores point in address_a and deletes point from memory 
-    std::ostringstream oss;
-    oss << point;
-    std::string address_a = oss.str();
-    deleteCoord3D(point);
-
-    Coord3D *new_point = createCoord3D(100, 100, 100);
-    std::ostringstream oss_new;
-    oss_new << new_point;
-    std::string address_a_new = oss.str();
-    deleteCoord3D(point);
-
-    CHECK(address_a_new == address_a);
-    }
-
-    SUBCASE("Test #5:") {
-    Coord3D * point = createCoord3D(69, 105, -50); 
-    // Stores point in address_a and deletes point from memory 
-    std::ostringstream oss;
-    oss << point;
-    std::string address_a = oss.str();
-    deleteCoord3D(point);
-
-    Coord3D *new_point = createCoord3D(69, 105, -50);
-    std::ostringstream oss_new;
-    oss_new << new_point;
-    std::string address_a_new = oss.str();
-    deleteCoord3D(point);
-
-    CHECK(address_a_new == address_a);
-    }
 }
