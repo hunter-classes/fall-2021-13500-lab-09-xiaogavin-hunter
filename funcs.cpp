@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include <string> 
+#include <sstream>
 #include "funcs.h"
 
 // Task A
@@ -37,4 +38,25 @@ Coord3D* createCoord3D(double x, double y, double z) {
 
 void deleteCoord3D(Coord3D *p) { 
     delete p;
+}
+
+bool is_same_address(double x, double y, double z) { 
+    Coord3D * point = createCoord3D(x, y, z); 
+
+    // Stores point in address_a and deletes point from memory 
+    std::ostringstream oss;
+    oss << point;
+    std::string address_a = oss.str();
+    deleteCoord3D(point);
+
+    // Make new point and store in new oss stream 
+    Coord3D * point2 = createCoord3D(x, y, z); 
+
+    std::ostringstream oss_new; 
+    oss_new << point2; 
+    std::string address_a_new = oss_new.str(); 
+    deleteCoord3D(point2);
+
+
+    return address_a == address_a_new ? true : false; 
 }
