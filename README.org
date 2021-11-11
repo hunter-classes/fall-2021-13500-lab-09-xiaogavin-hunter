@@ -7,7 +7,7 @@
 * GitHub username: xiaogavin-hunter
 
 * Notes:
-
+- Testing for Task E is within main, cannot test with doctest. 
 
 
 * General instructions:
