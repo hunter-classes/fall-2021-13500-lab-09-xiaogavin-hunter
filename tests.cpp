@@ -12,11 +12,11 @@ Coord3D test_five = {69, 105, -50};
 
 
 TEST_CASE("Task A:") { 
-    CHECK(length(&test_one) == 37.4166);
-    CHECK(length(&test_two) == 10.4881);
-    CHECK(length(&test_three) == 50.2494);
-    CHECK(length(&test_four) == 173.2051);
-    CHECK(length(&test_five) == 135.2257);
+    CHECK(length(&test_one) == doctest::Approx(37.4166).epsilon(.05)); 
+    CHECK(length(&test_two) == doctest::Approx(10.4881).epsilon(.05));
+    CHECK(length(&test_three) == doctest::Approx(50.2494).epsilon(.05));
+    CHECK(length(&test_four) == doctest::Approx(173.2051).epsilon(.05));
+    CHECK(length(&test_five) == doctest::Approx(135.2257).epsilon(.05));
 }
 
 TEST_CASE("Task B:") { 
